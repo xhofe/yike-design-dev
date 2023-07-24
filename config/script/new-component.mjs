@@ -69,6 +69,11 @@ const packageIndexFile = path.join(packagePath, 'index.ts')
 function createComponentMainFiles() {
   const componentBaseDir = packagePath + '/components/' + componentLowDashName
 
+  if (fs.existsSync(componentBaseDir)) {
+    warn(`${componentLowDashName}组件已存在，请检查是否存在冲突`)
+    process.exit(233)
+  }
+
   const childFIleList = [`/src`, `/style`]
 
   // create default folders
@@ -88,7 +93,11 @@ function createComponentMainFiles() {
 </template>
 <script setup lang="ts">
 import { ${upperComponentName}Props } from './${componentLowDashName}'
+import { createCssScope } from '../../../utils/bem'
 import '../style'
+
+const bem = createCssScope('${componentLowDashName}')
+
 defineOptions({
   name: '${upperFullComponentName}',
 })
