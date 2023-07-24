@@ -13,5 +13,5 @@
     }
   },
   "exclude": ["dist/**", "node_modules/**"],
-  "include": ["**/**/*.ts", "**/**/*.vue", "components.d.ts"]
+  "include": ["**/**/*.ts", "**/**/*.vue", "components.d.ts", "plugins/vite-plugin-md.mjs"]
 }
