@@ -28,7 +28,6 @@ withDefaults(defineProps<ButtonProps>(), {
   type: 'primary',
   size: 'l',
   shape: 'default',
-  status: 'primary',
   long: false,
   loading: false,
   disabled: false,
