@@ -26,7 +26,6 @@ function log(...rest) {
 }
 function warn(msg) {
   console.warn(chalk.bgRed.black(`[ERROR]`), msg)
-  process.exit(233)
 }
 
 function logCreateFile(filename) {
