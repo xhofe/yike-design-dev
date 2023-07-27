@@ -15,8 +15,8 @@
     "postinstall": "npx husky install",
     "preinstall": "npx only-allow pnpm",
     "gen:icon": "pnpm --filter yike-design-ui gen:icon",
-    "test": "pnpm --filter yike-design-ui test",
-    "test:coverage": "pnpm --filter yike-design-ui test:coverage"
+    "test": "pnpm --filter @yike/test test",
+    "test:coverage": "pnpm --filter @yike/test test:coverage"
   },
   "dependencies": {
     "svgo": "^3.0.2",
