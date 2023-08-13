@@ -7,25 +7,41 @@ import YkAnchor from './components/anchor';
 import YkPopover from './components/popover';
 import YkSwitch from './components/switch';
 import { YkDrawer } from './components/drawer';
+import { YkBreadcrumb, YkBreadcrumbItem } from './components/breadcrumb';
 import YkBadge from './components/badge';
 import YkScrollbar from './components/scrollbar';
 import YkRate from './components/rate';
+import YkAffix from './components/affix';
 import { YkInput } from './components/input';
 import { YkInputSearch } from './components/input-search';
+import YkTree from './components/tree';
+import YkTreeSelect from './components/tree-select';
+import YkSlider from './components/slider';
+import { YkCollapse, YkCollapseGroup } from './components/collapse';
+import YkPopconfirm from './components/popconfirm';
+import YkInputNumber from './components/input-number';
 import YkAlert from './components/alert';
 import YkButton from './components/button';
 import YkTheme from './components/theme';
 import YkIcon from './components/icon';
 import { YkAvatar, YkAvatarGroup } from './components/avatar';
 import YkSpace from './components/space';
-import { YkContainer } from './components/container';
 import YkTable from './components/table';
+import { YkTimeline, YkTimelineItem } from './components/timeline';
 import YkMessage from './components/message';
 import YkNotification from './components/notification';
 import { YkParagraph, YkTitle, YkText } from './components/typography';
 import { YkBackTop } from './components/back-top';
 import YkTooltip from './components/tooltip';
 import YkEmpty from './components/empty';
+import YkProgress from './components/progress';
+import YkModal from './components/modal';
+import { YkDropdown, YkDropdownItem } from './components/dropdown';
+import {
+  YkImage,
+  YkImagePreview,
+  YkImagePreviewGroup,
+} from './components/image';
 
 const components: {
   [propName: string]: Component;
@@ -39,11 +55,22 @@ const components: {
   YkAnchor,
   YkPopover,
   YkDrawer,
+  YkProgress,
   YkBadge,
   YkScrollbar,
   YkRate,
+  YkBreadcrumb,
+  YkBreadcrumbItem,
+  YkAffix,
   YkInput,
   YkInputSearch,
+  YkTree,
+  YkTreeSelect,
+  YkSlider,
+  YkCollapse,
+  YkCollapseGroup,
+  YkPopconfirm,
+  YkInputNumber,
   YkAlert,
   YkButton,
   YkTheme,
@@ -51,20 +78,28 @@ const components: {
   YkAvatar,
   YkAvatarGroup,
   YkSpace,
-  YkContainer,
   YkTable,
+  YkTimeline,
+  YkTimelineItem,
   YkParagraph,
   YkTitle,
   YkText,
   YkEmpty,
   YkBackTop,
   YkTooltip,
+  YkModal,
+  YkDropdown,
+  YkDropdownItem,
+  YkImage,
+  YkImagePreview,
+  YkImagePreviewGroup,
 };
 
 export {
   YkUpload,
   YkRadioGroup,
   YkRadio,
+  YkProgress,
   YkBadge,
   YkCheckbox,
   YkCheckboxGroup,
@@ -74,8 +109,18 @@ export {
   YkDrawer,
   YkScrollbar,
   YkRate,
+  YkBreadcrumb,
+  YkBreadcrumbItem,
+  YkAffix,
   YkInput,
   YkInputSearch,
+  YkTree,
+  YkTreeSelect,
+  YkSlider,
+  YkCollapse,
+  YkCollapseGroup,
+  YkPopconfirm,
+  YkInputNumber,
   YkAlert,
   YkButton,
   YkTheme,
@@ -84,8 +129,9 @@ export {
   YkAvatar,
   YkAvatarGroup,
   YkSpace,
-  YkContainer,
   YkTable,
+  YkTimeline,
+  YkTimelineItem,
   YkTitle,
   YkText,
   YkMessage,
@@ -93,6 +139,12 @@ export {
   YkEmpty,
   YkBackTop,
   YkTooltip,
+  YkModal,
+  YkDropdown,
+  YkDropdownItem,
+  YkImage,
+  YkImagePreview,
+  YkImagePreviewGroup,
 };
 
 // 全局注册

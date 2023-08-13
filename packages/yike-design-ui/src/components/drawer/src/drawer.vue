@@ -1,19 +1,19 @@
 <template>
-  <Teleport :to="target" :disabled="isFullscreenDrawer">
+  <Teleport :to="target">
     <div
-      v-if="show || shouldVisible"
-      :class="[
+      v-if="shouldVisible || show"
+      :class="
         bem({
           'other-el': !isFullscreenDrawer,
-        }),
-      ]"
+        })
+      "
       :aria-modal="show"
       aria-label="抽屉"
       tabindex="-1"
     >
       <Transition name="mask" appear>
         <div
-          v-if="showMask && shouldVisible"
+          v-if="showMask && show"
           :class="bem('mask')"
           aria-hidden="true"
         ></div>
@@ -21,17 +21,23 @@
       <div
         ref="focuser"
         aria-hidden="true"
+        aria-label="按 TAB 聚焦到抽屉"
         :class="bem('focus')"
         tabindex="0"
       ></div>
-      <Transition :name="`${placement}-drawer`" appear @after-leave="destory">
+      <Transition
+        :name="`${placement}-drawer`"
+        appear
+        @after-enter="onAfterOpen"
+        @after-leave="onDestory"
+      >
         <div
-          v-if="shouldVisible"
+          v-if="show"
           ref="drawerMain"
           :class="
             bem({
               main: true,
-              shadow: !isFullscreenDrawer || !props.showMask,
+              shadow: !props.showMask,
               [`${props.placement}`]: true,
             })
           "
@@ -39,14 +45,16 @@
         >
           <div :class="bem('wrapper')">
             <button v-if="closable" :class="bem('close')" @click="close">
-              <icon-close-outline />
+              <IconCrossOutline />
             </button>
             <div :class="bem('header')" :aria-label="title">
               <slot name="header">{{ props.title }}</slot>
             </div>
-            <div :class="bem('content')">
-              <slot></slot>
-            </div>
+            <YkScrollbar>
+              <div :class="bem('content')">
+                <slot></slot>
+              </div>
+            </YkScrollbar>
             <div :class="bem('footer')">
               <slot name="footer"></slot>
             </div>
@@ -63,6 +71,7 @@ import { computed, ref, nextTick, watch, onMounted } from 'vue'
 import { getElement, getDrawerOrder, drawerStats } from './utils'
 import { onClickOutside } from '@vueuse/core'
 import { createCssScope } from '../../utils/bem'
+import { YkScrollbar } from '../../scrollbar'
 defineOptions({
   name: 'YkDrawer',
 })
@@ -81,36 +90,42 @@ const props = withDefaults(defineProps<DrawerProps>(), {
 
 const target = ref<HTMLElement | Element>(document.body)
 const drawerId = ref<number>(getDrawerOrder())
-const emits = defineEmits(['close', 'open'])
+const emits = defineEmits(['close', 'open', 'before-close'])
 const focuser = ref<HTMLElement>()
 const drawerMain = ref<HTMLElement>()
-const shouldDestory = ref<boolean>(false)
 const shouldVisible = ref<boolean>()
-const isLast = ref<boolean>(false)
 const isFullscreenDrawer = ref<boolean>(props.to === 'body')
-// 记录这个抽屉是不是 show prop 默认就是 true
-const initialShowProp = ref<boolean>()
 const bem = createCssScope('drawer')
 
 nextTick(() => {
   target.value = getElement(props.to)
 })
 
+const onAfterOpen = () => {
+  focuser.value?.focus()
+}
+
 const close = () => {
-  isLast.value = drawerStats.isLast(drawerId.value)
-  if (!isLast.value) {
+  // 当前抽屉不是最后一个抽屉 直接 return 不关闭
+  if (!drawerStats.isLast(drawerId.value)) {
     return
+  }
+  emits('before-close')
+  emits('close')
+}
+
+const onDestory = () => {
+  document.body.removeEventListener('keydown', onEscape)
+  if (isFullscreenDrawer.value) {
+    drawerStats.close()
+  }
+  if (drawerStats.isLast(drawerId.value) && !props.scrollable) {
+    document.body.style.overflow = ''
   }
   shouldVisible.value = false
 }
 
-const destory = () => {
-  emits('close')
-  shouldDestory.value = true
-  document.body.removeEventListener('keydown', escape)
-}
-
-const escape = (ev: KeyboardEvent) => {
+const onEscape = (ev: KeyboardEvent) => {
   if (ev.key === 'Escape') close()
 }
 
@@ -119,13 +134,12 @@ onClickOutside(drawerMain, close)
 onMounted(() => {
   if (props.show) {
     drawerStats.open(drawerId.value)
-    initialShowProp.value = true
   }
   shouldVisible.value = props.show
 })
 
-watch(props, () => {
-  if (props.show) {
+watch(props, (oldValue, newValue) => {
+  if (newValue.show) {
     // 非附加在 body 的抽屉不记录
     if (isFullscreenDrawer.value) {
       drawerStats.open(drawerId.value)
@@ -135,18 +149,10 @@ watch(props, () => {
       document.body.style.overflow = 'hidden'
     }
     if (props.escapable) {
-      document.body.addEventListener('keydown', escape)
+      document.body.addEventListener('keydown', onEscape)
     }
     focuser.value?.focus()
     emits('open')
-  } else {
-    if (isFullscreenDrawer.value) {
-      drawerStats.close()
-    }
-    if (drawerStats.isLast(drawerId.value) && !props.scrollable) {
-      document.body.style.overflow = ''
-    }
-    shouldVisible.value = false
   }
 })
 
