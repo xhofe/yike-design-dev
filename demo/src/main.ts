@@ -6,6 +6,7 @@ import router from './router';
 import Snippet from './components/Snippet.vue';
 import ColorCard from './components/ColorCard.vue';
 import componentPageVue from './components/component-page.vue';
+import Title from '@yike/components/typography';
 
 // highlight 的样式，依赖包，组件
 import hljs from 'highlight.js/lib/core';
@@ -23,6 +24,7 @@ hljs.registerLanguage('javascript', javascript);
 app
   .component('YkSnippet', Snippet)
   .component('ColorCard', ColorCard)
+  .component('YkTitle', Title)
   .component(componentPageVue.name, componentPageVue)
   .use(hljsVuePlugin)
   .use(router)
