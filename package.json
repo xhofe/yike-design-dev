@@ -20,7 +20,8 @@
     "build:less": "pnpm --filter @yike-design/ui build:less",
     "gen:icon": "pnpm --filter @yike-design/ui gen:icon",
     "test": "pnpm --filter @yike-design/test test",
-    "test:coverage": "pnpm --filter @yike-design/test test:coverage"
+    "test:coverage": "pnpm --filter @yike-design/test test:coverage",
+    "build:resolver": "pnpm --filter @yike-design/resolver build"
   },
   "dependencies": {
     "dayjs": "^1.11.9",
