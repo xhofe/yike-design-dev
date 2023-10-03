@@ -1,6 +1,6 @@
 import fs from 'fs';
 export function fetchIndexContent() {
-  const exportPath = '@yike-design/ui/es/components/index.d.ts';
+  const exportPath = '../yike-design-ui/src/index.ts';
   const fileContent = fs.readFileSync(exportPath, 'utf-8');
   return fileContent;
 }
@@ -30,5 +30,5 @@ export function parseImportStatements(
   }
 }
 export function sideEffects(name: string) {
-  return `@yike-design/ui/components/${name}/style`;
+  return `@yike-design/ui/components/es/${name}/style/index.js`;
 }

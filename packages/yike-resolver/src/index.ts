@@ -1,6 +1,5 @@
-import { sideEffects, parseImportStatements, fetchIndexContent } from './utils';
-import '';
-const yikeSrcPath = '@yike-design/ui';
+import { parseImportStatements, fetchIndexContent } from './utils';
+const yikeSrcPath = '@yike-design/ui/es';
 const compPaths: any = {};
 const content = fetchIndexContent();
 parseImportStatements(compPaths, content);
@@ -9,7 +8,7 @@ export function YikeResolver(compName: string) {
     return {
       name: compName,
       from: yikeSrcPath,
-      sideEffects: sideEffects(compPaths[compName]),
+      // sideEffects: sideEffects(compPaths[compName]),
     };
   }
   if (compName.startsWith('Icon')) {

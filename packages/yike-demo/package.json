@@ -1,7 +1,7 @@
 {
-  "name": "demo",
+  "name": "@yike-design/demo",
+  "private": true,
   "version": "0.0.0",
-  "private": false,
   "type": "module",
   "scripts": {
     "dev": "vite",
