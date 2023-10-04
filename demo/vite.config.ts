@@ -3,9 +3,9 @@ import createVuePlugin from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
 import vitePluginMarkdown from './plugins/vite-plugin-md';
 import Components from 'unplugin-vue-components/vite';
-import YikeDevResolver from './plugins/resolver';
+// import YikeDevResolver from './plugins/resolver';
 
-// import { YikeResolver } from '@yike-design/resolver/src/index';
+import { YikeDevResolver } from '@yike-design/resolver/dist/index';
 
 import { join } from 'path';
 
@@ -13,7 +13,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': join(process.cwd(), './src'),
-      '@yike-design/ui': join(process.cwd(), '../packages/yike-design-ui'),
+      // '@yike-design/ui': join(process.cwd(), '../packages/yike-design-ui'),
     },
   },
   plugins: [
@@ -29,7 +29,7 @@ export default defineConfig({
       dirs: [
         './src/components',
         './src/views',
-        '@yike-design/ui/src/components',
+        // '@yike-design/ui/src/components',
       ],
       resolvers: [YikeDevResolver],
     }),
