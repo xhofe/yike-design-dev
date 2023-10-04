@@ -76,6 +76,8 @@ function cssjsPlugin(): Plugin {
           fileName: filename.replace('index.js', 'css.js'),
           // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-ignore
+          // FIX ME
+          // Change the content of index.js to be correct
           source: "'../index.css'",
         });
       }
