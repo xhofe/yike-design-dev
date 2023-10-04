@@ -70,13 +70,13 @@ function cssjsPlugin(): Plugin {
     name: 'vite:cssjs',
     async generateBundle(outputOptions, bundle) {
       for (const filename of Object.keys(bundle)) {
-        const chunk = bundle[filename];
+        // const chunk = bundle[filename];
         this.emitFile({
           type: 'asset',
           fileName: filename.replace('index.js', 'css.js'),
           // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-ignore
-          source: chunk.code.replace(/\.less/g, '.css'),
+          source: "'../index.css'",
         });
       }
     },

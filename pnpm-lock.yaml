@@ -88,7 +88,7 @@ importers:
     dependencies:
       '@vitejs/plugin-vue-jsx': registry.npmmirror.com/@vitejs/plugin-vue-jsx/3.0.2_vue@3.3.4
       '@vueuse/core': registry.npmmirror.com/@vueuse/core/10.4.0_vue@3.3.4
-      '@yike-design/resolver': link:../packages/yike-resolver
+      '@yike-design/resolver': link:../packages/yike-design-resolver
       '@yike-design/ui': link:../packages/yike-design-ui
       markdown-it: registry.npmmirror.com/markdown-it/12.3.2
       pinia: registry.npmmirror.com/pinia/2.1.6_vue@3.3.4
@@ -137,7 +137,7 @@ importers:
       typescript: registry.npmmirror.com/typescript/5.2.2
       vite-plugin-dts: registry.npmmirror.com/vite-plugin-dts/3.5.2_typescript@5.2.2
 
-  packages/yike-demo:
+  packages/yike-design-demo:
     specifiers:
       '@highlightjs/vue-plugin': ^2.1.0
       '@types/markdown-it': ^12.2.3
@@ -156,7 +156,7 @@ importers:
     dependencies:
       '@vitejs/plugin-vue-jsx': registry.npmmirror.com/@vitejs/plugin-vue-jsx/3.0.2_vue@3.3.4
       '@vueuse/core': registry.npmmirror.com/@vueuse/core/10.4.0_vue@3.3.4
-      '@yike-design/resolver': link:../yike-resolver
+      '@yike-design/resolver': link:../yike-design-resolver
       '@yike-design/ui': link:../yike-design-ui
       markdown-it: registry.npmmirror.com/markdown-it/12.3.2
       pinia: registry.npmmirror.com/pinia/2.1.6_vue@3.3.4
@@ -169,6 +169,9 @@ importers:
       '@vitejs/plugin-vue': registry.npmmirror.com/@vitejs/plugin-vue/4.3.3_vue@3.3.4
       highlight.js: registry.npmmirror.com/highlight.js/11.8.0
       unplugin-vue-components: registry.npmmirror.com/unplugin-vue-components/0.25.1_vue@3.3.4
+
+  packages/yike-design-resolver:
+    specifiers: {}
 
   packages/yike-design-test:
     specifiers:
@@ -200,9 +203,6 @@ importers:
     devDependencies:
       '@yike-design/build': link:../yike-build
       standard-version: 9.5.0
-
-  packages/yike-resolver:
-    specifiers: {}
 
 packages:
 

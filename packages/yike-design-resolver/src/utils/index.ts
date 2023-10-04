@@ -30,5 +30,5 @@ export function parseImportStatements(
   }
 }
 export function sideEffects(name: string) {
-  return `@yike-design/ui/components/es/${name}/style/index.js`;
+  return `@yike-design/ui/components/es/${name}/style/css.js`;
 }
