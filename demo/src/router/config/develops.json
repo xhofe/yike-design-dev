@@ -8,7 +8,7 @@
       },
       {
         "name": "快速上手",
-        "src": "grasp"
+        "src": "getting-started"
       },
       {
         "name": "暗黑模式",
@@ -17,6 +17,10 @@
       {
         "name": "定制主题",
         "src": "theme"
+      },
+      {
+        "name": "贡献指南",
+        "src": "grasp"
       }
     ]
   }

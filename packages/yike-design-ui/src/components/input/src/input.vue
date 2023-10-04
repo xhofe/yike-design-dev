@@ -229,6 +229,12 @@ const YkInputButtonClass = computed(() => {
   }
 })
 
+const setValue = (value: string) => {
+  lastValue = value
+  emits('update:modelValue', lastValue)
+  emits('change', lastValue)
+}
+
 watch(
   () => props.modelValue,
   (newValue) => {
@@ -239,5 +245,6 @@ watch(
 
 defineExpose({
   inputRef,
+  setValue,
 })
 </script>

@@ -19,14 +19,32 @@ const isDev = import.meta.env.DEV
 <template>
   <div class="top-bar">
     <router-link class="logo" to="/">
-      <img src="@/assets/icon/logo.svg" />
+      <img src="@/assets/svgs/logo.svg" />
       <IconYkdesignFill class="name" />
       <yk-tag v-if="isDev" type="primary">DEV</yk-tag>
     </router-link>
     <yk-space class="nav-links" :size="24" align="center">
-      <a class="nav-item responsive-hidden" :href="Links.design">UI 设计稿</a>
-      <a class="nav-item responsive-hidden" :href="Links.task">任务文档</a>
-      <a class="nav-item responsive-hidden" :href="Links.devStandard">
+      <a
+        v-if="isDev"
+        class="nav-item responsive-hidden"
+        :href="Links.design"
+        target="_blank"
+      >
+        UI 设计稿
+      </a>
+      <a
+        v-if="isDev"
+        class="nav-item responsive-hidden"
+        :href="Links.task"
+        target="_blank"
+      >
+        任务文档
+      </a>
+      <a
+        class="nav-item responsive-hidden"
+        :href="Links.devStandard"
+        target="_blank"
+      >
         开发规范
       </a>
       <router-link
@@ -61,12 +79,11 @@ const isDev = import.meta.env.DEV
   align-items: center;
   padding: 0 24px;
 
-  width: 100vw;
+  width: 100%;
   height: var(--top-bar-height);
   border-bottom: 1px solid @line-color-s;
   background-color: @bg-color-l;
   transition: all @animats;
-  box-sizing: border-box;
 
   a {
     display: flex;

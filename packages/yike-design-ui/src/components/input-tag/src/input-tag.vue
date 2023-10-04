@@ -38,7 +38,7 @@
               :class="bem('tag-list-item')"
               :disabled="mergedDisabled"
             >
-              +{{ tagList.length - +showCollapsedNum }}
+              +{{ tagList.length - +mincollapsedNum }}
             </yk-tag>
             <slot
               v-else
@@ -104,6 +104,7 @@ const emits = defineEmits([
   'click',
   'hoverin',
   'hoverout',
+  'update:modelValue',
 ])
 
 const {
