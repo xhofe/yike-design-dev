@@ -9,25 +9,25 @@ import DocPage from './components/DocPage.vue';
 import '@/style/main.less';
 
 // Yike Design UI
-import Icon from '@yike-design/ui/src/components/svg-icon';
-import { YkTitle, YkMessage, YkNotification } from '@yike-design/ui/src';
-import { vLoading } from '@yike-design/ui/src/components/spinner/src/directive';
-import '@yike-design/ui/src/components/styles/index.less';
-import '@yike-design/ui/src/components/notification/style';
-import '@yike-design/ui/src/components/message/style';
+// import Icon from '@yike-design/ui/src/components/svg-icon';
+// import { YkTitle, YkMessage, YkNotification } from '@yike-design/ui/src';
+// import { vLoading } from '@yike-design/ui/src/components/spinner/src/directive';
+// import '@yike-design/ui/src/components/styles/index.less';
+// import '@yike-design/ui/src/components/notification/style';
+// import '@yike-design/ui/src/components/message/style';
 
 const app = createApp(App);
 
 app
-  .component(YkTitle.name, YkTitle)
+  // .component(YkTitle.name, YkTitle)
   .component(Snippet.name, Snippet)
   .component(DocPage.name, DocPage)
   .component(ColorCard.name, ColorCard)
-  .use(Icon)
+  // .use(Icon)
   .use(router)
   .mount('#app');
 
-app.directive('loading', vLoading);
+// app.directive('loading', vLoading);
 
-app.config.globalProperties.$notification = YkNotification;
-app.config.globalProperties.$message = YkMessage;
+// app.config.globalProperties.$notification = YkNotification;
+// app.config.globalProperties.$message = YkMessage;
