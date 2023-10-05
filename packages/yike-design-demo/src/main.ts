@@ -15,7 +15,7 @@ import { vLoading } from '@yike-design/ui/src/components/spinner/src/directive';
 import '@yike-design/ui/src/components/styles/index.less';
 import '@yike-design/ui/src/components/notification/style';
 import '@yike-design/ui/src/components/message/style';
-
+import '@yike-design/ui/es/index.less';
 const app = createApp(App);
 
 app

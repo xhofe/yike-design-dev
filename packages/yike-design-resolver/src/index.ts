@@ -12,7 +12,7 @@ export function YikeDevResolver(compName: string) {
     return {
       name: compName,
       from: yikeSrcPath,
-      sideEffects: dir,
+      // sideEffects: dir,
     };
   }
   if (compName.startsWith('Icon')) {
