@@ -1,7 +1,7 @@
 {
-  "name": "@yike-design/demo",
-  "private": true,
+  "name": "demo",
   "version": "0.0.0",
+  "private": false,
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -11,19 +11,19 @@
   "dependencies": {
     "@vitejs/plugin-vue-jsx": "^3.0.1",
     "@vueuse/core": "^10.2.1",
+    "@yike-design/ui": "0.0.6",
     "markdown-it": "^12.3.2",
     "pinia": "^2.1.4",
     "seemly": "^0.3.6",
     "vue": "^3.3.4",
-    "vue-router": "^4.1.6",
-    "@yike-design/ui": "workspace:*",
-    "@yike-design/resolver": "workspace:*"
+    "@yike-design/resolver": "workspace:*",
+    "vue-router": "^4.1.6"
   },
   "devDependencies": {
-    "@highlightjs/vue-plugin": "^2.1.0",
     "@types/markdown-it": "^12.2.3",
     "@vitejs/plugin-vue": "^4.2.3",
-    "highlight.js": "^11.7.0",
+    "markdown-it-shikiji": "^0.6.8",
+    "shikiji": "^0.6.8",
     "unplugin-vue-components": "^0.25.1"
   }
 }

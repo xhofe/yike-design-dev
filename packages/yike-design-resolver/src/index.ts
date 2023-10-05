@@ -2,6 +2,7 @@ import { sideEffects, getComponentsByName, sideEffectsDev } from './utils';
 // const compPaths: any = {};
 // const content = fetchIndexContent();
 // parseImportStatements(compPaths, content);
+
 const isDev = process.env.NODE_ENV === 'development';
 export function YikeDevResolver(compName: string) {
   const yikeSrcPath = '@yike-design/ui/src';

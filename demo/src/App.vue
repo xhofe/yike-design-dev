@@ -1,4 +1,0 @@
-<template>
-  <TopBar />
-  <RouterView />
-</template>
