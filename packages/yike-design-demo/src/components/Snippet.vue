@@ -25,7 +25,7 @@ const showCode = ref(false)
 const html = ref('')
 
 const shiki = getHighlighter({
-  themes: ['vitesse-light', 'vitesse-dark'],
+  themes: ['light-plus', 'one-dark-pro'],
   langs: ['vue'],
 })
 
@@ -33,8 +33,8 @@ shiki.then((highlighter) => {
   html.value = highlighter.codeToHtml(originCode, {
     lang: 'vue',
     themes: {
-      dark: 'vitesse-dark',
-      light: 'vitesse-light',
+      dark: 'one-dark-pro',
+      light: 'light-plus',
     },
   })
 })
