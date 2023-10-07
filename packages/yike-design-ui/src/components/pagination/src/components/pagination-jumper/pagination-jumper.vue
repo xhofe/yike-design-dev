@@ -20,7 +20,7 @@
 import { ref, watch, nextTick } from 'vue'
 import type { JumperProps, JumperEmits } from './pagination-jumper'
 import { useCssScope } from '../../utils'
-
+import YkInputNumber from '../../../../input-number'
 defineOptions({
   name: 'YkPaginationJumper',
 })

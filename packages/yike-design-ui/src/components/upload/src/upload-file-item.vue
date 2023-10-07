@@ -45,7 +45,11 @@ import { computed, toRefs } from 'vue'
 import { getArcPath, getFileTypeIconName } from './utils'
 import { generateUid, createCssScope } from '../../utils'
 import type { FileItemProps } from './upload'
-
+import {
+  IconDeleteOutline,
+  IconTickOutline,
+  IconLoading1Outline,
+} from '../../svg-icon'
 const props = withDefaults(defineProps<FileItemProps>(), {
   progress: 0,
   fileContent: () => ({

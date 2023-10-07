@@ -50,6 +50,13 @@ import { computed, toRefs, ref } from 'vue'
 import { getArcPath } from './utils'
 import { generateUid, createCssScope } from '../../utils'
 import type { FileItemProps } from './upload'
+import {
+  IconUpload2Outline,
+  IconEyeOutline,
+  IconDeleteOutline,
+  IconModifyOutline,
+  IconImageBackupOutline,
+} from '../../svg-icon'
 
 const props = withDefaults(defineProps<FileItemProps>(), {
   progress: 0,

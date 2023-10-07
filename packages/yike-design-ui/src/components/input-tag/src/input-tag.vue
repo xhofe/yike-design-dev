@@ -74,8 +74,9 @@ import { toRefs, ref, computed, watch, nextTick, getCurrentInstance } from 'vue'
 import { InputTagProps } from './input-tag'
 import { useFormItem, SIZES_MAP, createCssScope, useVModel } from '../../utils'
 import { calculateElementStyle } from './utils'
+import { IconCrossOutline } from '../../svg-icon'
 import YkInput from '../../input'
-
+import YkTag from '../../tag'
 const bem = createCssScope('input-tag')
 const ctx = getCurrentInstance()
 

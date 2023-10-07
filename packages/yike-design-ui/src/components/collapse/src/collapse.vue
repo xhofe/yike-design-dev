@@ -42,7 +42,7 @@
 import { CollapseProps } from './collapse'
 import { createCssScope } from '../../utils'
 import { onMounted, ref } from 'vue'
-
+import { IconRightOutline } from '../../svg-icon'
 defineOptions({
   name: 'YkCollapse',
 })

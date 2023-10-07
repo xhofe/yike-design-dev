@@ -118,7 +118,8 @@ import UploadPictureItem from './upload-picture-item.vue'
 import { YkImagePreviewGroup } from '../../image'
 import { IconUpload2Outline, IconPlusOutline } from '../../svg-icon'
 import YkModal from '../../modal'
-
+import YkButton from '../../button'
+import { YkText } from '../../typography'
 defineOptions({
   name: 'YkUpload',
 })

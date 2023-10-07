@@ -1,9 +1,3 @@
-import fs from 'fs';
-export function fetchIndexContent() {
-  const exportPath = '../yike-design-ui/src/index.ts';
-  const fileContent = fs.readFileSync(exportPath, 'utf-8');
-  return fileContent;
-}
 // 提取导入路径和组件名称
 export function parseImportStatements(
   compPaths: Record<string, string>,

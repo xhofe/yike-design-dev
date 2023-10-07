@@ -31,6 +31,12 @@ import { CropImageProps } from './upload'
 import { YkSlider } from '../../slider'
 import { createCssScope } from '../../utils'
 import { useDebounceFn } from '@vueuse/core'
+import {
+  IconMinusOutline,
+  IconPlusOutline,
+  IconRotateLeftOutline,
+  IconRotateRightOutline,
+} from '../../svg-icon'
 
 // start{X,Y}: mouse down location
 // client{X,Y}: current Picture location

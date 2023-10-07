@@ -39,8 +39,7 @@ export default defineConfig({
     preprocessorOptions: {
       less: {
         charset: false,
-        additionalData:
-          '@import (reference) "@yike-design/ui/es/components/styles/index.less";',
+        additionalData: '@import (reference) "@yike-design/ui/src/index.less";',
       },
     },
   },

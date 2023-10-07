@@ -65,6 +65,7 @@ import { createCssScope } from '../../utils'
 import { modalBaseProps } from './modal'
 import { IconCloseOutline } from '../../svg-icon'
 import YkButton from '../../button'
+import YkSpace from '../../space'
 import '../style'
 
 defineOptions({

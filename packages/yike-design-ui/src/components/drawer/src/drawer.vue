@@ -73,6 +73,7 @@ import { computed, ref, nextTick, watch, onMounted } from 'vue'
 import { getElement, getDrawerOrder, drawerStats } from './utils'
 import { createCssScope } from '../../utils'
 import { YkScrollbar } from '../../scrollbar'
+import { IconCrossOutline } from '../../svg-icon'
 
 defineOptions({
   name: 'YkDrawer',
