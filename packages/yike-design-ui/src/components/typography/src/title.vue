@@ -12,8 +12,6 @@ defineOptions({ name: 'YkTitle' })
 
 const bem = createCssScope('title')
 
-console.log(bem())
-
 // prettier-ignore
 const props = withDefaults(
   defineProps<titleProps>(), {
