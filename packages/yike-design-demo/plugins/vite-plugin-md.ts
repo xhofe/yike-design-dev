@@ -16,8 +16,8 @@ md.use(mdCustomLinkCls);
 md.use(
   await Shikiji({
     themes: {
-      light: 'vitesse-light',
-      dark: 'vitesse-dark',
+      light: 'light-plus',
+      dark: 'one-dark-pro',
     },
   }),
 );

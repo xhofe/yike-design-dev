@@ -10,7 +10,7 @@
     :disabled="disabled || loading"
   >
     <yk-spinner v-if="loading" :size="getSize(size)" />
-
+    <div>测试更新</div>
     <span v-if="$slots.icon" :class="icon">
       <slot name="icon" />
     </span>

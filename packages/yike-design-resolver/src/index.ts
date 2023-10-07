@@ -2,7 +2,6 @@ import { sideEffects, getComponentsByName, sideEffectsDev } from './utils';
 // const compPaths: any = {};
 // const content = fetchIndexContent();
 // parseImportStatements(compPaths, content);
-
 const isDev = process.env.NODE_ENV === 'development';
 export function YikeDevResolver(compName: string) {
   const yikeSrcPath = '@yike-design/ui/src';
@@ -12,7 +11,7 @@ export function YikeDevResolver(compName: string) {
     return {
       name: compName,
       from: yikeSrcPath,
-      // sideEffects: dir,
+      sideEffects: dir,
     };
   }
   if (compName.startsWith('Icon')) {
@@ -23,19 +22,17 @@ export function YikeDevResolver(compName: string) {
   }
 }
 export function YikeResolver(compName: string) {
-  let yikeSrcPath = '@yike-design/ui/es';
+  if (isDev) {
+    return YikeDevResolver(compName);
+  }
+  const yikeSrcPath = '@yike-design/ui/es';
 
   if (compName.startsWith('Yk')) {
-    const resolverMap = {
+    return {
       name: compName,
       from: yikeSrcPath,
       sideEffects: sideEffects(getComponentsByName(compName)),
     };
-    if (isDev) {
-      yikeSrcPath = '@yike-design/ui/src';
-      resolverMap.sideEffects = '';
-    }
-    return resolverMap;
   }
   if (compName.startsWith('Icon')) {
     return {
